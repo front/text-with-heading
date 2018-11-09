@@ -4,7 +4,7 @@ const { registerBlockType } = blocks;
 const { dispatch, select } = data;
 const { __ } = i18n;
 
-// TODO: Import each block herer
+// Import each block herer
 import * as block1 from './text-with-heading';
 
 
@@ -20,7 +20,7 @@ export function registerBlocks () {
   const currentCategories = select('core/blocks').getCategories().filter(item => item.slug !== category.slug);
   dispatch('core/blocks').setCategories([ category, ...currentCategories ]);
 
-  // TODO: Register each block
+  // Register each block
   registerBlockType(`${category.slug}/${block1.name}`, { category: category.slug, ...block1.settings });
 }
 
